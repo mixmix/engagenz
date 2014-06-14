@@ -5,15 +5,13 @@ class SearchesController < ApplicationController
   end
 
   def query
-    @results = SearchService.find(search_query)
-    binding.pry
+    @results = SearchService.find(search_params)
   end
 
   private
 
-  def search_query
-    params[:search]
-    # { types:  params[:types],
-    #   region: params[:region] }
+  def search_params
+    { types:  params[:search][:types],
+      region: params[:search][:region] }
   end
 end
