@@ -5,13 +5,16 @@ class SearchesController < ApplicationController
   end
 
   def query
-    @results = SearchService.find(search_params)
+    @query = search_params
+    @region = Region.find( @query[:region] ).name
+    # @types
+    @results = SearchService.find(@query)
   end
 
   private
 
   def search_params
-    { types:  params[:search][:types],
-      region: params[:search][:region] }
+    { categories: params[:search][:categories],
+      region:     params[:search][:region] }
   end
 end

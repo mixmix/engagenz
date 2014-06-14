@@ -1,2 +1,11 @@
-- @results.each do |result|
-  = p result
+Region: #{@region}
+
+%ul
+  - @results.each do |result|
+    %li.provider
+      .detail= result.name
+      .detail= result.description
+      .detail= result.phone_number
+      .detail= result.email
+      .detail= result.website
+
