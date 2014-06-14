@@ -2,5 +2,5 @@ Index Search Page
 
 = simple_form_for :search, url: '/search' do |f|
   = f.input :categories, as: :check_boxes, collection: Category.all
-  = f.input :region, as: :select, collection: Region.all
+  = f.input :region,     as: :select,      collection: Region.all
   = f.submit :Search, class: 'btn btn-primary'
