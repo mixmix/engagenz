@@ -36,7 +36,6 @@ ActiveAdmin.register Provider do
       f.input :description
       f.input :address
       f.input :phone_number
-      f.input :address
       f.input :email
       f.input :website
       f.input :categories, :as => :check_boxes
