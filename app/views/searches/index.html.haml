@@ -1,6 +1,7 @@
-Index Search Page
+%h1 I want information about:
 
 = simple_form_for :search, url: '/search' do |f|
-  = f.input :categories, as: :check_boxes, collection: Category.all
-  = f.input :region,     as: :select,      collection: Region.all
-  = f.submit :Search, class: 'btn btn-primary'
+  = f.input :categories, as: :check_boxes, collection: Category.all, label: false
+  %h2 I live in...
+  = f.input :region, as: :select, collection: Region.all, default: 1, label: false, class: 'btn btn-lg'
+  = f.submit :Search, class: 'btn btn-primary btn-lg'
